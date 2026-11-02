@@ -1,0 +1,46 @@
+
+name: Build Simeis
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+permissions:
+  contents: read
+
+jobs:
+  development:
+    name: Build Development
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v6
+
+      - name: Vérifier le code
+        run: make check
+
+      - name: Exécuter les tests unitaires
+        run: make test
+
+      - name: Compiler en Debug
+        run: make build
+
+  release:
+    name: Build Release
+    if: github.event.action == 'closed' && github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v6
+
+      - name: Compiler en Release
+        run: make release
+
+      - name: Install Typst
+        run: sudo snap install typst
+
+      - name: Compiler la doc
+        run: make manual
