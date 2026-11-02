@@ -9,5 +9,9 @@ jobs:
   bonjour:
     runs-on: ubuntu-latest
     steps:
-      - name: Afficher un message
-        run: echo "Bonjour GitHub Actions !"
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v6
+
+      - name: Afficher le README
+        run: cat README.md
+
