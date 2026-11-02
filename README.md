@@ -1,3 +1,3 @@
 # Simeis
 
-Jeu par API.
+Jeu par API
