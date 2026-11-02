@@ -1,6 +1,6 @@
 # Simeis
 
-Jeu par API
+Jeu par API. 
 
 Lorem Ipsum
 "Neque porro quisquam est qui dolorem ipsum quia dolor asseyez-vous amet, consectetur, adipisci velit..."
