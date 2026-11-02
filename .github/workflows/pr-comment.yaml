@@ -1,0 +1,13 @@
+
+name: Mon premier workflow
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  bonjour:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher un message
+        run: echo "Bonjour GitHub Actions !"
