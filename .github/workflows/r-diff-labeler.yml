@@ -21,5 +21,8 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: bash ./.github/scripts/pr-diff-labeler.sh
 
-      - name: Build
+      - name: Build debug
         run: make build
+
+      - name: Build Release
+        run: make release

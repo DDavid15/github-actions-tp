@@ -21,5 +21,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr comment "${{ github.event.pull_request.number }}" --body-file README.md
-      - name: Build
+
+      - name: Build debug
         run: make build
+
+      - name: Build Release
+        run: make release

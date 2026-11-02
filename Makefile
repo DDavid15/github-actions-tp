@@ -1,4 +1,4 @@
-.PHONY: build debug release
+.PHONY: build release
 
 build: 
 	cargo build
