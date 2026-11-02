@@ -19,4 +19,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: bash ./scripts/pr-diff-labeler.sh
+        run: bash ./.github/scripts/pr-diff-labeler.sh
