@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   labeler:
-    runs-on: makebuild
+    runs-on: make build
 
     steps:
       - name: Récupérer le dépôt

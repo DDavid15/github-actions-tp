@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   commentaire:
-    runs-on: makebuild
+    runs-on: make build
 
     steps:
       - name: Récupérer le dépôt
