@@ -1,17 +1,23 @@
 
-name: Mon premier workflow
+name: Commentaire sur PR
 
 on:
   pull_request:
     types: [opened]
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
-  bonjour:
+  commentaire:
     runs-on: ubuntu-latest
+
     steps:
       - name: Récupérer le dépôt
         uses: actions/checkout@v6
 
-      - name: Afficher le README
-        run: cat README.md
-
+      - name: Publier le README sur la PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr comment "${{ github.event.pull_request.number }}" --body-file README.md
