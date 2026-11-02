@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   labeler:
-    runs-on: ubuntu-latest
+    runs-on: makebuild
 
     steps:
       - name: Récupérer le dépôt

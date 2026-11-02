@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   commentaire:
-    runs-on: ubuntu-latest
+    runs-on: makebuild
 
     steps:
       - name: Récupérer le dépôt
