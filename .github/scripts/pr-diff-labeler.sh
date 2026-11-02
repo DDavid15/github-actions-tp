@@ -1,5 +1,6 @@
 
 lignes_modifiees=$(gh pr view "$PR_NUMBER" --json additions,deletions | jq -r '.additions + .deletions')
+echo $lignes_modifiees
 
 if [ "$lignes_modifiees" -gt 1000 ]; then
   echo "Le nombre de lignes modifiées est supérieur à 1000."
