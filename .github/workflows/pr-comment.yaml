@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   commentaire:
-    runs-on: make build
+    runs-on: ubuntu-latest
 
     steps:
       - name: Récupérer le dépôt
@@ -21,3 +21,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr comment "${{ github.event.pull_request.number }}" --body-file README.md
+      - name: Build
+        run: make build

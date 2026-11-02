@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   labeler:
-    runs-on: make build
+    runs-on: ubuntu-latest
 
     steps:
       - name: Récupérer le dépôt
@@ -20,3 +20,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: bash ./.github/scripts/pr-diff-labeler.sh
+
+      - name: Build
+        run: make build
